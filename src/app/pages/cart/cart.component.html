@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h2 class="fw-bold text-primary">🛒 Your Cart</h2>
+    
+    <div *ngIf="cartItems.length === 0" class="alert alert-info text-center">
+      Your cart is empty.
+    </div>
+    
+    <div *ngFor="let product of cartItems; let i = index" class="card mb-3 shadow-sm border-0">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-3 d-flex justify-content-center p-3">
+          <img [src]="product.image" class="img-fluid rounded" alt="{{ product.title }}" style="max-height: 120px;">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">{{ product.title }}</h5>
+            <p class="card-text text-muted">{{ product.description }}</p>
+            <p class="card-text text-success fw-bold">{{ product.price | currency }}</p>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center p-3">
+          <button class="btn btn-outline-danger btn-sm w-100" (click)="removeFromCart(i)">
+            <span class="material-icons align-middle">delete</span> Remove
+          </button>
+        </div>
+      </div>
+    </div>
+</div>

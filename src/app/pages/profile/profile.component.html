@@ -1,0 +1,84 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-lg border-0 p-4" style="max-width: 500px; width: 100%; font-family: 'Arial', sans-serif; background-color: #f8f9fa;">
+        <div class="text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+                <h4 class="text-dark fw-bold mb-0">{{ user.name?.firstname }} {{ user.name?.lastname }}</h4>
+            </div>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+
+        <hr>
+
+        <h6 class="text-dark fw-bold d-flex align-items-center gap-2">
+            <span class="material-icons text-danger">account_circle</span> Profile Information
+        </h6>
+        <table class="table table-sm table-hover border rounded small">
+            <tbody>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">person</span> Username
+                    </th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">phone</span> Phone
+                    </th>
+                    <td>{{ user.phone }}</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">email</span> Email
+                    </th>
+                    <td>{{ user.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h6 class="text-dark fw-bold d-flex align-items-center gap-2">
+            <span class="material-icons text-danger">home</span> Address
+        </h6>
+        <table class="table table-sm table-hover border rounded small">
+            <tbody>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">location_on</span> Street
+                    </th>
+                    <td>{{ user.address?.street }}</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">business</span> City
+                    </th>
+                    <td>{{ user.address?.city }}</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">markunread_mailbox</span> Zip Code
+                    </th>
+                    <td>{{ user.address?.zipcode }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h6 class="text-dark fw-bold d-flex align-items-center gap-2">
+            <span class="material-icons text-danger">public</span> Geolocation
+        </h6>
+        <table class="table table-sm table-hover border rounded small">
+            <tbody>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">map</span> Latitude
+                    </th>
+                    <td>{{ user.address?.geolocation?.lat }}</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-nowrap d-flex align-items-center gap-2">
+                        <span class="material-icons text-danger">explore</span> Longitude
+                    </th>
+                    <td>{{ user.address?.geolocation?.long }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
